@@ -1,0 +1,135 @@
+/* App.css */
+@font-face {
+    font-family: 'MyFont';
+    src: url('../fonts/Fujimaru-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.App {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 200vh; /* Ensure there's enough scroll space */
+  }
+  
+  .door-container {
+    position: fixed; /* Fixed position to keep doors in place */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 5; /* Ensure doors are above the content */
+  }
+  
+  .navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #474140; /* Semi-transparent background */
+    z-index: 6; /* Ensure navbar is above the doors */
+  }
+  
+  .navbar ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+  }
+  
+  .navbar li {
+    padding: 10px;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #eee6e6;
+  }
+  
+  .door {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%; /* Adjust width as needed */
+    background-size: cover; /* Cover the entire element */
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.8s ease; /* Adjust the transition duration as needed */
+    z-index: 5; /* Higher z-index to be above the content */
+  }
+  
+  .left-door {
+    left: 0;
+    transform-origin: left center;
+    background-image: url('../images/leftDoor2.png'); /* Path to your left door image */
+  }
+  
+  .right-door {
+    right: 0;
+    transform-origin: right center;
+    background-image: url('../images/rightDoor2.png'); /* Path to your right door image */
+  }
+  
+  .left-door.open {
+    transform: translateX(-100%);
+  }
+  
+  .right-door.open {
+    transform: translateX(100%);
+  }
+  
+  .left-door:not(.open) {
+    transform: translateX(0);
+  }
+  
+  .right-door:not(.open) {
+    transform: translateX(0);
+  }
+  
+  .background-section {
+    position: relative; /* Relative positioning for normal document flow */
+    padding-top: 80px; /* Adjust padding as needed */
+    height: 100vh; /* Match the height of the viewport */
+    z-index: 1; /* Lower z-index to be behind the doors */
+    overflow: hidden; /* Hide overflow to prevent video controls from appearing */
+  }
+  
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire section */
+    z-index: -1; /* Send video behind other content */
+  }
+  
+  .content-section {
+    font-family: 'Myfont' ,Arial, sans-serif;
+    font-size: x-large;
+    color: white;
+    position: relative; /* Relative positioning for normal document flow */
+    top: -95vh; /* Shift content section up to match the end of background section */
+    z-index: 3; /* Lower z-index to be behind the doors */
+  }
+  
+  .sec1 {
+    position: relative;
+    background: linear-gradient(to bottom, #043b5e, #000000); 
+    height: 100vh; /* Match the height of the viewport */
+    margin-top: -175px; /* Offset to align with the background section */
+    z-index: 2; /* Higher z-index to be above the background section */
+  }
+
+  .sec2 {
+    position: relative;
+    background: linear-gradient(to bottom, #043b5e, #000000); 
+    height: 50vh; /* Match the height of the viewport */
+    margin-top: -175px; /* Offset to align with the background section */
+    z-index: 2; /* Higher z-index to be above the background section */
+  }
+  
+  
